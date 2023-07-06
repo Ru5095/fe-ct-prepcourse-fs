@@ -5,18 +5,17 @@ function obtenerMayor(x, y) {
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
-   switch (x, y) {
-      case x >y:
-         return x
-         break;
-      case x < y:
-         return y
-         break;
-      default:
-         var arrayXY = [x, y]
-         var randomXY = arrayXY[Math.floor(Math.random() * arrayXY.length)];
-         return randomXY
-         break;
+   if (x > y) {
+      return x
+   }
+   else if (x < y) {
+      return y
+   }
+   
+   else {  
+   var arrayXY = [x, y]
+   var randomXY = arrayXY[Math.floor(Math.random() * arrayXY.length)];
+   return randomXY
    }
 }
 
@@ -25,14 +24,12 @@ function mayoriaDeEdad(edad) {
    // Si tiene 18 años ó más debe retornar el string: "Allowed".
    // Caso contrario: "Not allowed".
    // Tu código:
-   switch (edad) {
-      case edad >= 18:
-         return ("Allowed")
-         break;
-      default:
-         return ("Not Allowed")
-         break;
-   }
+   if (edad >= 18) {
+         return `Allowed`
+      }
+      else {
+         return ("Not allowed")
+      }
 }
 
 function conection(status) {
@@ -108,27 +105,23 @@ function esDiezOCinco(num) {
    // Retornar true si "num" es 10 o 5.
    // De lo contrario, retornar false.
    // Tu código:
-   switch (num) {
-      case (num = 10) || (num = 5):
-         return true;
-         break;
-      default:
-         return false;
-         break;
+   if ((num == 10) || (num == 5)) {
+      return true
    }
+   else {
+      return false
+      }
 }
 
 function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
-   switch(num) {
-      case (num > 20) && (num < 50):
-         return true;
-         break;
-      default:
-         return false;
-         break;
+   if ((num > 20) && (num < 50)) {
+      return true;
+   }   
+   else {
+      return false;
    }
 }
 
@@ -148,7 +141,19 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
-}
+   if ((num % 3 === 0) && (num % 5 === 0)) {
+      return "fizzbuzz"
+   }
+   else if (num % 3 === 0) {
+         return "fizz"
+   }
+   else if (num % 5 === 0) {
+         return "buzz"
+   }
+   else { 
+   return false
+   }
+   }
 
 function operadoresLogicos(num1, num2, num3) {
    // La función recibe tres números distintos.
