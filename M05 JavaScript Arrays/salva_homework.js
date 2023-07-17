@@ -9,8 +9,8 @@ function devolverPrimerElemento(array) {
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-var lastElement = array.length - 1;
-return array[lastElement] 
+   var lastNumber = array[array.length - 1];
+   return lastNumber
 }
 
 function obtenerLargoDelArray(array) {
@@ -51,15 +51,24 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   return palabras.join(" ")
+   var frase = palabras.join(` `)
+   return frase;
 }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-   return array.includes(elemento);
-   
+   for(i=0; i<array.length; i++){
+      if(array[i] == elemento) {
+         return true;
+         break;
+      }
+      else if(i == array.length-1) {
+         return false;
+         break;
+      }
+   }
 }
 
 function agregarNumeros(arrayOfNums) {
@@ -92,7 +101,7 @@ function numeroMasGrande(arrayOfNums) {
    arrayOfNums.sort(function(a,b){
       return b-a
    })
-   return arrayOfNums[0]
+   return   arrayOfNums[0]
 }
 
 function multiplicarArgumentos() {
@@ -115,8 +124,8 @@ function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
    var mayoresDe18 = 0
-   for(let i = 0; i < array.length; i++) {
-      if (array[i] > 18) {
+   for( let i = 0; i < array.length; i++) {
+      if (array[i] >= 18) {
          mayoresDe18++
       }
    }
@@ -153,6 +162,15 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código: 
+   for(let i = 1; i < array.length; i++) {
+      if (array[0] != array[i]){
+         return false;
+         break;
+      }
+      else if (i == array.length - 1) {
+         return true;
+      }
+   }
 }
 
 function mesesDelAño(array) {
@@ -160,18 +178,40 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var mesesPerdidos = [];
+   if ((array.includes("Enero")) && (array.includes("Marzo")) && (array.includes("Noviembre"))) {
+      mesesPerdidos.push("Enero");
+      mesesPerdidos.push("Marzo");
+      mesesPerdidos.push("Noviembre")
+   }
+   else {
+      return "No se encontraron los meses pedidos"
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var multiplosDe6 = []
+   for (let i = 0; i<=10; i++){
+      let resultado = 6 * i
+      multiplosDe6.push(resultado)
+   }
+   return multiplosDe6
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var mayoresQue100 = []
+   for (let i = 0; i < array.length; i++){
+      if(array[i] > 100){
+         mayoresQue100.push(array[i])
+      }
+   }
+   return mayoresQue100
 }
 
 /* ----------------------------------------------------------------------------------
@@ -185,6 +225,15 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var sumas = []
+   for (let i = 0; i < 10; i++){
+   num = num + 2;
+   sumas.push(num)
+   return sumas
+   if(num = i){
+      return "Se interrumpió la ejecución";
+      break;
+   }}
 }
 
 function continueStatement(num) {
@@ -194,6 +243,16 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var sumas = [];
+   for (let i = 0; i < 10; i++){
+      if (i =5){
+         continue;
+      }
+      else
+      num = num + 2;
+      sumas.push(num)
+      return sumas
+     }
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
